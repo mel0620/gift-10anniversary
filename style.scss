@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+
+body, html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.poster-wrapper {
+    img {
+        border-radius: 5px;
+    }
+    
+    @media screen and (max-width: 500px) {
+        margin-bottom: 1rem;
+    }
+    
+}
+
+form {
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    width: 100%;
+
+    input, button {
+        border: 0;
+        padding: 8px;
+        width: 100%;
+        outline: none;
+    }
+
+    input {
+        &:first-child {
+            border-top-left-radius: 4px;
+        }
+    }
+
+    button {
+        border-top-right-radius: 4px;
+        background-color: tomato;
+        color: #fff;
+    }
+
+    @media screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+
+        input {
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        input:first-child {
+            border-top-right-radius: 4px;
+        }
+
+        button {
+            border-radius: 0;
+        }
+    }
+}
+
+.attendance-wrapper {
+    background-color: #fff;
+    padding: 1rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 1px solid #eaeaea;
+
+    ul {
+        all: unset;
+        list-style-type: none;
+
+        li {
+            padding: 10px;
+            background-color: #eaeaea;
+            font-size: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            cursor: pointer;
+            transition: .3s all ease-in-out;
+            text-align: left;
+
+            div {
+                background-color: #eaeaea;
+                color: #1c1c1c;
+                width: 25px;
+                height: 25px;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                transition: .2s all ease-in-out;
+                vertical-align: middle;
+            }
+
+            &:hover {
+                background-color: #1c1c1c;
+                color: #fff;
+
+                div {
+                    color: #fff;
+                    background-color: rgba(#f54949, .8);
+                }
+            }
+        }
+    }
+}
