@@ -1,5 +1,6 @@
 const attendance_list = document.querySelector('#attendance_list');
 const form            = document.querySelector('#add-attendies-form');
+const total           = document.querySelector('#total');
 
 function renderAttendance(doc) {
     let li   = document.createElement('li');
@@ -50,6 +51,10 @@ db.collection('attendance').orderBy('lastname').onSnapshot(snapshot => {
         }
     })
 })
+
+db.collection('attendance').onSnapshot(snapshot => {
+    total.textContent = snapshot.size
+});
 
 // Save data
 form.addEventListener('submit', (e) => {
